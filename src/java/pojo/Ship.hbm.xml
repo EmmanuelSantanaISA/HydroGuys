@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Ship" table="Ship" schema="dbo" catalog="HidroGuys" optimistic-lock="version">
+        <id name="shipId" type="int">
+            <column name="ShipID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="farm" class="pojo.Farm" fetch="select">
+            <column name="FarmID" />
+        </many-to-one>
+        <property name="shipName" type="string">
+            <column name="ShipName" length="50" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="StartDate" length="10" />
+        </property>
+        <set name="lines" table="Line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ShipID" />
+            </key>
+            <one-to-many class="pojo.Line" />
+        </set>
+    </class>
+</hibernate-mapping>

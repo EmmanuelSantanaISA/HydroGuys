@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Reader" table="Reader" schema="dbo" catalog="HidroGuys" optimistic-lock="version">
+        <id name="readerId" type="int">
+            <column name="ReaderID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="line" class="pojo.Line" fetch="select">
+            <column name="LineID" />
+        </many-to-one>
+        <property name="readerName" type="string">
+            <column name="ReaderName" length="50" />
+        </property>
+        <property name="registerDate" type="date">
+            <column name="RegisterDate" length="10" />
+        </property>
+        <set name="sensors" table="Sensor" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ReaderID" />
+            </key>
+            <one-to-many class="pojo.Sensor" />
+        </set>
+    </class>
+</hibernate-mapping>

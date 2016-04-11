@@ -17,7 +17,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import pojo.Line;
 import pojo.Sensor;
-import pojo.TempSensor;
+
 
 /**
  * REST Web Service
@@ -37,15 +37,8 @@ public class SensorService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Line getSensorData(@QueryParam("lineid") int lineID) {
-        Line newLine = new Line();
-        newLine.setLineID(lineID);
-        newLine.setLineType("Type 1");
-       TempSensor tempSensor = new TempSensor();
-        tempSensor.setValue(10f);
-        List<Sensor> sensorsList = new ArrayList<>();
-        sensorsList.add(tempSensor);
-        newLine.setSensorsList(sensorsList);
-        return newLine;
+       
+        return new Line();
     }
 
 }
