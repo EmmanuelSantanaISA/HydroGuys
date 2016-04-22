@@ -29,8 +29,15 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(ws.FarmService.class);
-        resources.add(ws.SensorService.class);
+        resources.add(ws.FarmsService.class);
+        resources.add(ws.LinesService.class);
+        resources.add(ws.ReadersService.class);
+        resources.add(ws.SensorDataService.class);
+        resources.add(ws.SensorTypesService.class);
+        resources.add(ws.SensorsService.class);
+        resources.add(ws.ShipsService.class);
+        resources.add(ws.UsersService.class);
+        
     }
     
 }

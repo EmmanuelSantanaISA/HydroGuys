@@ -2,10 +2,12 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="HidroGuys"/>
-  <table-filter match-name="Reader"/>
-  <table-filter match-name="Ship"/>
+  <table-filter match-name="User"/>
+  <table-filter match-name="SensorData"/>
   <table-filter match-name="SensorType"/>
   <table-filter match-name="Farm"/>
-  <table-filter match-name="Sensor"/>
   <table-filter match-name="Line"/>
+  <table-filter match-name="Ship"/>
+  <table-filter match-name="Reader"/>
+  <table-filter match-name="Sensor"/>
 </hibernate-reverse-engineering>

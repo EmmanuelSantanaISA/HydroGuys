@@ -1,5 +1,5 @@
 package pojo;
-// Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1
+// Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class SensorType  implements java.io.Serializable {
 
 
-     private int sensorTypeId;
+     private Integer sensorTypeId;
      private String type;
      private String description;
      private Set sensors = new HashSet(0);
@@ -19,22 +19,17 @@ public class SensorType  implements java.io.Serializable {
     public SensorType() {
     }
 
-	
-    public SensorType(int sensorTypeId) {
-        this.sensorTypeId = sensorTypeId;
-    }
-    public SensorType(int sensorTypeId, String type, String description, Set sensors) {
-       this.sensorTypeId = sensorTypeId;
+    public SensorType(String type, String description, Set sensors) {
        this.type = type;
        this.description = description;
        this.sensors = sensors;
     }
    
-    public int getSensorTypeId() {
+    public Integer getSensorTypeId() {
         return this.sensorTypeId;
     }
     
-    public void setSensorTypeId(int sensorTypeId) {
+    public void setSensorTypeId(Integer sensorTypeId) {
         this.sensorTypeId = sensorTypeId;
     }
     public String getType() {

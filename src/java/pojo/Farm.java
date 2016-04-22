@@ -1,5 +1,5 @@
 package pojo;
-// Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1
+// Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Farm  implements java.io.Serializable {
 
 
-     private int farmId;
+     private Integer farmId;
      private String farmName;
      private String farmLocation;
      private Date startDate;
@@ -21,23 +21,18 @@ public class Farm  implements java.io.Serializable {
     public Farm() {
     }
 
-	
-    public Farm(int farmId) {
-        this.farmId = farmId;
-    }
-    public Farm(int farmId, String farmName, String farmLocation, Date startDate, Set ships) {
-       this.farmId = farmId;
+    public Farm(String farmName, String farmLocation, Date startDate, Set ships) {
        this.farmName = farmName;
        this.farmLocation = farmLocation;
        this.startDate = startDate;
        this.ships = ships;
     }
    
-    public int getFarmId() {
+    public Integer getFarmId() {
         return this.farmId;
     }
     
-    public void setFarmId(int farmId) {
+    public void setFarmId(Integer farmId) {
         this.farmId = farmId;
     }
     public String getFarmName() {

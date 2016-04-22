@@ -1,5 +1,5 @@
 package pojo;
-// Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1
+// Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Reader  implements java.io.Serializable {
 
 
-     private int readerId;
+     private Integer readerId;
      private Line line;
      private String readerName;
      private Date registerDate;
@@ -21,23 +21,18 @@ public class Reader  implements java.io.Serializable {
     public Reader() {
     }
 
-	
-    public Reader(int readerId) {
-        this.readerId = readerId;
-    }
-    public Reader(int readerId, Line line, String readerName, Date registerDate, Set sensors) {
-       this.readerId = readerId;
+    public Reader(Line line, String readerName, Date registerDate, Set sensors) {
        this.line = line;
        this.readerName = readerName;
        this.registerDate = registerDate;
        this.sensors = sensors;
     }
    
-    public int getReaderId() {
+    public Integer getReaderId() {
         return this.readerId;
     }
     
-    public void setReaderId(int readerId) {
+    public void setReaderId(Integer readerId) {
         this.readerId = readerId;
     }
     public Line getLine() {

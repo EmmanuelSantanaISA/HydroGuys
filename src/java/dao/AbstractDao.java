@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dao;
 
 /**
@@ -13,12 +12,15 @@ package dao;
 import java.util.List;
 import hibernate.HibernateFactory;
 import hibernate.DataAccessLayerException;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.User;
 
 public abstract class AbstractDao {
+
     private Session session;
     private Transaction tx;
 
@@ -79,12 +81,30 @@ public abstract class AbstractDao {
         return objects;
     }
 
+    protected User findUser(User user) {
+        User obj = null;
+        try {
+            startOperation();
+//            obj = session.createCriteria("");
+            Criteria criteria = session.createCriteria("");
+            
+
+            tx.commit();
+        } catch (HibernateException e) {
+            handleException(e);
+        } finally {
+            //HibernateFactory.close(session);
+        }
+        return obj;
+    }
+
     protected void handleException(HibernateException e) throws DataAccessLayerException {
         HibernateFactory.rollback(tx);
         throw new DataAccessLayerException(e);
     }
 
     protected void startOperation() throws HibernateException {
+
         session = HibernateFactory.openSession();
         tx = session.beginTransaction();
     }

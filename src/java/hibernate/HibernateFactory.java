@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hibernate;
 
 /**
@@ -14,11 +13,13 @@ import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateFactory {
+
     private static SessionFactory sessionFactory;
 //    private static Log log = LogFactory.getLog(HibernateFactory.class);
 
     /**
      * Constructs a new Singleton SessionFactory
+     *
      * @return
      * @throws HibernateException
      */
@@ -31,9 +32,10 @@ public class HibernateFactory {
 
     /**
      * Builds a SessionFactory, if it hasn't been already.
-     * @return 
+     *
+     * @return
      */
-    public static SessionFactory buildIfNeeded() throws DataAccessLayerException{
+    public static SessionFactory buildIfNeeded() throws DataAccessLayerException {
         if (sessionFactory != null) {
             return sessionFactory;
         }
@@ -43,10 +45,10 @@ public class HibernateFactory {
             throw new DataAccessLayerException(e);
         }
     }
+
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
-    
 
     public static Session openSession() throws HibernateException {
         buildIfNeeded();
@@ -58,7 +60,7 @@ public class HibernateFactory {
             try {
                 sessionFactory.close();
             } catch (HibernateException ignored) {
-//                log.error("Couldn't close SessionFactory", ignored);
+                System.out.println("closeFactory Error: " + ignored.getMessage());
             }
         }
     }
@@ -66,9 +68,10 @@ public class HibernateFactory {
     public static void close(Session session) {
         if (session != null) {
             try {
+                //session.flush(); // agregue esto
                 session.close();
             } catch (HibernateException ignored) {
-//                log.error("Couldn't close Session", ignored);
+                System.out.println("closeFactory Error: " + ignored.getMessage());
             }
         }
     }
@@ -79,13 +82,13 @@ public class HibernateFactory {
                 tx.rollback();
             }
         } catch (HibernateException ignored) {
-//            log.error("Couldn't rollback Transaction", ignored);
+            System.out.println("closeFactory Error: " + ignored.getMessage());
         }
     }
+
     /**
      *
-     * @return
-     * @throws HibernateException
+     * @return @throws HibernateException
      */
     private static SessionFactory configureSessionFactory() throws HibernateException {
         Configuration configuration = new Configuration();

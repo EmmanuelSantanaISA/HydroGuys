@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.SensorData" table="SensorData" catalog="HidroGuys">
+        <id name="sensorDataId" type="java.lang.Integer">
+            <column name="SensorDataID" />
+            <generator class="identity" />
+        </id>
+        <timestamp name="timestamp" column="Timestamp" />
+<!--        <many-to-one name="sensor" class="pojo.Sensor" fetch="select">
+            <column name="SensorID" />
+        </many-to-one>-->
+        <property name="value" type="java.lang.Integer">
+            <column name="Value" />
+        </property>
+    </class>
+</hibernate-mapping>

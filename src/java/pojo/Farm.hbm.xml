@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Farm" table="Farm" schema="dbo" catalog="HidroGuys" optimistic-lock="version">
-        <id name="farmId" type="int">
+    <class name="pojo.Farm" table="Farm" catalog="HidroGuys" optimistic-lock="version">
+        <id name="farmId" type="java.lang.Integer">
             <column name="FarmID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="farmName" type="string">
             <column name="FarmName" length="50" />

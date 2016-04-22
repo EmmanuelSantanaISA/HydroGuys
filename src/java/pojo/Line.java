@@ -1,5 +1,5 @@
 package pojo;
-// Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1
+// Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Line  implements java.io.Serializable {
 
 
-     private int lineId;
+     private Integer lineId;
      private Ship ship;
      private String lineName;
      private Date startDate;
@@ -21,23 +21,18 @@ public class Line  implements java.io.Serializable {
     public Line() {
     }
 
-	
-    public Line(int lineId) {
-        this.lineId = lineId;
-    }
-    public Line(int lineId, Ship ship, String lineName, Date startDate, Set readers) {
-       this.lineId = lineId;
+    public Line(Ship ship, String lineName, Date startDate, Set readers) {
        this.ship = ship;
        this.lineName = lineName;
        this.startDate = startDate;
        this.readers = readers;
     }
    
-    public int getLineId() {
+    public Integer getLineId() {
         return this.lineId;
     }
     
-    public void setLineId(int lineId) {
+    public void setLineId(Integer lineId) {
         this.lineId = lineId;
     }
     public Ship getShip() {

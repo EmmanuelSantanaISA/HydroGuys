@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Reader" table="Reader" schema="dbo" catalog="HidroGuys" optimistic-lock="version">
-        <id name="readerId" type="int">
+    <class name="pojo.Reader" table="Reader" catalog="HidroGuys" optimistic-lock="version">
+        <id name="readerId" type="java.lang.Integer">
             <column name="ReaderID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="line" class="pojo.Line" fetch="select">
+<!--        <many-to-one name="line" class="pojo.Line" fetch="select">
             <column name="LineID" />
-        </many-to-one>
+        </many-to-one>-->
         <property name="readerName" type="string">
             <column name="ReaderName" length="50" />
         </property>

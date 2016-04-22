@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.User" table="User" catalog="HidroGuys" optimistic-lock="version">
+        <id name="userId" type="java.lang.Integer">
+            <column name="UserID" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="UserName" length="45" />
+        </property>
+        <property name="registerDate" type="date">
+            <column name="RegisterDate" length="10" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="45" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="45" />
+        </property>
+        <property name="userTypeId" type="java.lang.Integer">
+            <column name="UserTypeID" />
+        </property>
+        <property name="phone" type="string">
+            <column name="Phone" length="45" />
+        </property>
+        <property name="age" type="string">
+            <column name="Age" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

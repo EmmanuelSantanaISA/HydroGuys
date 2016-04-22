@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 11, 2016 1:26:09 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 21, 2016 7:11:11 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Sensor" table="Sensor" schema="dbo" catalog="HidroGuys" optimistic-lock="version">
-        <id name="sensorId" type="int">
+    <class name="pojo.Sensor" table="Sensor" catalog="HidroGuys" optimistic-lock="version">
+        <id name="sensorId" type="java.lang.Integer">
             <column name="SensorID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="reader" class="pojo.Reader" fetch="select">
+<!--        <many-to-one name="reader" class="pojo.Reader" fetch="select">
             <column name="ReaderID" />
-        </many-to-one>
+        </many-to-one>-->
         <many-to-one name="sensorType" class="pojo.SensorType" fetch="select">
             <column name="SensorTypeID" />
         </many-to-one>
+        <set name="sensorDatas" table="SensorData" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SensorID" />
+            </key>
+            <one-to-many class="pojo.SensorData" />
+        </set>
     </class>
 </hibernate-mapping>
