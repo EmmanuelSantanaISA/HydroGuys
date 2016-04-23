@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <timestamp name="timestamp" column="Timestamp" />
-<!--        <many-to-one name="sensor" class="pojo.Sensor" fetch="select">
+        <!--        <many-to-one name="sensor" class="pojo.Sensor" fetch="select">
             <column name="SensorID" />
         </many-to-one>-->
         <property name="value" type="java.lang.Integer">

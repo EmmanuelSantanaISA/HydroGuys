@@ -65,7 +65,7 @@ public class UserDAO extends AbstractDao {
     public List findAll() throws DataAccessLayerException {
         return super.findAll(User.class);
     }
-    
+
     public User doLogin(User user) throws DataAccessLayerException {
         return (User) super.findUser(user);
     }

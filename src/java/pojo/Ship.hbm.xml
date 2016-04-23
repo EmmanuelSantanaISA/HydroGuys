@@ -8,7 +8,7 @@
             <column name="ShipID" />
             <generator class="identity" />
         </id>
-<!--        <many-to-one name="farm" class="pojo.Farm" fetch="select">
+        <!--        <many-to-one name="farm" class="pojo.Farm" fetch="select">
             <column name="FarmID" />
         </many-to-one>-->
         <property name="shipName" type="string">

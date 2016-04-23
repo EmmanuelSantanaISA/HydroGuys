@@ -87,7 +87,6 @@ public abstract class AbstractDao {
             startOperation();
 //            obj = session.createCriteria("");
             Criteria criteria = session.createCriteria("");
-            
 
             tx.commit();
         } catch (HibernateException e) {

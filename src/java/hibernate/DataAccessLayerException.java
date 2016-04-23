@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hibernate;
 
 /**
@@ -14,6 +13,7 @@ package hibernate;
  * Represents Exceptions thrown by the Data Access Layer.
  */
 public class DataAccessLayerException extends RuntimeException {
+
     public DataAccessLayerException() {
     }
 

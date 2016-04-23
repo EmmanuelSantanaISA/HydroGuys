@@ -54,7 +54,7 @@ public class UsersService {
         dao.create(user);
         return Response.ok(user).build();
     }
-    
+
 //    @POST
 //    @Consumes(MediaType.APPLICATION_JSON)
 //    public Response doLogin(User user) {

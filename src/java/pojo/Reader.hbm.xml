@@ -8,7 +8,7 @@
             <column name="ReaderID" />
             <generator class="identity" />
         </id>
-<!--        <many-to-one name="line" class="pojo.Line" fetch="select">
+        <!--        <many-to-one name="line" class="pojo.Line" fetch="select">
             <column name="LineID" />
         </many-to-one>-->
         <property name="readerName" type="string">

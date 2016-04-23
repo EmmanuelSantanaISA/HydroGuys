@@ -53,6 +53,19 @@ public class ShipsService {
         return dao.find(id);
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Ship getByFarm(@PathParam("id") int id) {
+        ShipDAO dao = null;
+        try {
+            dao = new ShipDAO();
+        } catch (Exception e) {
+            System.out.println("get Ships Error: " + e.getMessage());
+        }
+        return dao.find(id);
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response add(Ship ship) {
