@@ -36,34 +36,11 @@ public class Test {
     }
 
     public void consume() {
-        
-            //        FarmsService fs = new FarmsService();
-//        List<Farm> farms = fs.getAll();
-//        for (Farm farm : farms) {
-//            System.out.println("Farm Name: " + farm.getFarmName());
-//        }
-
-            ReadersService rs = new ReadersService();
-//            LinesService ls = new LinesService();
-//            SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy");
-//            String dateString = "15-10-2008";
-//            Date date = format.parse(dateString);
-//
-//            Reader reader1 = new Reader();
-//            reader1.setReaderName("Reader3");
-//            
-//            reader1.setRegisterDate(date);
-//            Line line = ls.get(1);
-//            System.out.println("Line Name: " + line.getLineName());
-//            reader1.setLine(line);
-//            
-//            rs.add(reader1);
-            
-            List<Reader> readers = rs.getAll();
-            for (Reader reader : readers) {
-                System.out.println("Reader ID: " + reader.getReaderId());
-            }
-
+        try {
+            addLine();
+        } catch (ParseException ex) {
+            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

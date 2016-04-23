@@ -31,7 +31,7 @@ public abstract class AbstractDao {
     protected void saveOrUpdate(Object obj) {
         try {
             startOperation();
-            session.saveOrUpdate(obj);
+            session.save(obj);
             tx.commit();
         } catch (HibernateException e) {
             handleException(e);
